@@ -54,6 +54,7 @@ Os dados mostram que o último ano que teve essa vacinação foi em 2016 e, nova
 
 Os dados mostram que o último ano que teve vacinação de sarampo foi em 2002. A cidade com maior cobertura foi Palmeira (SC) com 314% de cobertura.
 [A tabela pode ser vista aqui](https://docs.google.com/spreadsheets/d/1iPHrT-psGWY3QvCFPvf59pLs4HfGTwGLRsLyhpv4arI/edit#gid=543481050)
+
 Observação: parece ter havido um caso de _missing data_, pois foram realizadas campanhas de vacinação de sarampo nos últimos anos.
 
 **Vacinação tríplice viral d1 e d2**
@@ -76,3 +77,27 @@ group by id_municipio
 order by **COBERTURA_SARAMPO** DESC
 
 
+3. Ao aprofundarmos nosso conhecimento na base de dados, identificamos um ponto de atenção:   ***A tabela traz uma coluna das aplicações de imunizantes não especificadas. Quais municípios têm o pior controle de sua campanha de vacinação? Alguma região/estado se destaca nesta análise?***
+
+Pela análise dos dados, sabemos que 2.365 prefeituras brasileiras não registram ao menos metade das vacinas que aplicam em suas populações, portanto 44,6% das cidades estão nessa condição. Esses dados escancaram que o Brasil é falho no registro das ações feitas no âmbito do Plano Nacional de Imunizações (PNI). 
+
+Ainda sobre o não registro de vacinas, a análise dos dados mostra que o Rio Grande do Sul é o pior Estado em percentual de doses não aplicadas: 52,29% das vacinas desempenhadas na unidade federativa não tem registro de qual imunizante foi usado. Na sequência, aparecem quatro estados do Nordeste: Rio Grande do Norte, Piauí, Paraíba e Alagoas.
+
+Entre as cidades, os seis maiores percentuais de doses ignoradas são de municípios do RS: União da Serra, Coqueiro Baixo, Herval, Coronel Pilar, Relvado e Morro Redondo. O top 10 ainda tem outras duas cidades dessa unidade federativa: Santa Tereza (8ª) e Cerrito (9ª). Completam as 10 primeiras as prefeituras de Senador José Bento (MG) e Águas de São Pedro (SP). Todas computam ao menos 61% de doses não especificadas.
+
+**Passo a passo:**
+Criamos um banco de dados no SQL e o nomeei como “sis_vacina”. Em seguida, importamos o arquivo em CSV para o banco de dados e comecei o processo de execução em SQL. 
+
+Nesta etapa, pesquisamos quais municípios brasileiros são mais falhos no registro das doses que aplicam em sua população, a partir da coluna “doses_ignorado”. Segue a query usada para a consulta:
+
+SELECT id_municipio, Nome_Município as cidade, sum(doses_total) as total_aplicadas, sum(doses_ignorado) as total_ignoradas, Nome_UF
+
+FROM sis_vacina
+
+LEFT JOIN cod_cidade
+
+ON CódigoMunicípioCompleto = id_municipio
+
+GROUP BY cidade
+
+ORDER BY total_ignoradas DESC
