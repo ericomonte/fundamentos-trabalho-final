@@ -105,12 +105,41 @@ ORDER BY total_ignoradas DESC
 [A tabela pode ser vista aqui](https://docs.google.com/spreadsheets/d/1Bqji5RKiQnWcxSsAwfyAFTek9N9hBdT_z99w4Qon8xM/edit#gid=807994399)
 
 
-4. POr fim, investigamos como está o cenário no país: ***Em média, quais estados brasileiros mais vacinam e menos vacinam seus cidadãos para cada doença? Alguma unidade da federação se destaca para o bem ou para o mal?***
+4. Por fim, investigamos como está o cenário no país: ***Em média, quais estados brasileiros mais vacinam e menos vacinam seus cidadãos para cada doença? Alguma unidade da federação se destaca para o bem ou para o mal?***
 
-Decidimos fazer um recorte temporal mais curto para investigar a quantidade de doses aplicadas por estado pré e pós pandemia. Entre 2012 e 2019, o número de doses aplicadas por estado, em média, subiu 108%. Embora, em oito estados o número de doses tenha caído.
+A Bahia apresenta a menor cobertura vacinal do país para poliomielite,  meningococo e tríplice viral d1. O Distrito Federal apresenta a maior cobertura vacinal para tríplice viral d1 e d2, meningococo e a segunda melhor cobertura para poliomielite.
+
+**Passo a passo:**
+Criamos um banco de dados no SQL e o nomeei como “sist_imunizacao”. Em seguida, importamos o arquivo em CSV para o banco de dados e comecei o processo de execução em SQL. 
+
+SELECT sigla_uf, sum(cobertura_poliomielite), sum(cobertura_meningococo), sum(cobertura_tetravalente), sum(cobertura_tetra_viral), sum(cobertura_triplice_viral_d1), sum(cobertura_triplice_viral_d2)
+
+FROM sist_imunizacao
+
+where ano>2011
+
+GROUP by sigla_uf
+
+[A tabela pode ser vista aqui](https://docs.google.com/spreadsheets/d/1iPHrT-psGWY3QvCFPvf59pLs4HfGTwGLRsLyhpv4arI/edit#gid=346068398)
+
+Decidimos também fazer um recorte temporal mais curto para investigar a quantidade de doses aplicadas por estado pré e pós pandemia. Entre 2012 e 2019, o número de doses aplicadas por estado, em média, subiu 108%. Embora, em oito estados o número de doses tenha caído.
 
 Entre 2019 (último ano pré-pandemia) e 2021, o número de doses aplicadas por estado, em média, caiu 28%. Todos os estados apresentaram queda. Destaque para o Amapá, onde a redução foi de 40%. O Espírito Santo apresentou a menor redução: 18%.
 
+**Passo a passo:**
+Utilizamos a seguinte fórmula:
+
+SELECT sigla_uf, sum(doses_total)
+
+FROM sist_imunizacao
+
+where ano=2012
+
+GROUP by sigla_uf
+
+Repetimos a fórmula acima com anos de 2019 e 2021. Exportamos o CSV e levamos para uma planilha, adicionando as coluna "2019/2012" e "2021/2019" para calcular o percentual de doses aplicadas de um ano sobre o outro.
+
+[A tabela pode ser vista aqui](https://docs.google.com/spreadsheets/d/1iPHrT-psGWY3QvCFPvf59pLs4HfGTwGLRsLyhpv4arI/edit#gid=1537710458)
 
 ## Para onde esses insights poderiam nos levar
 
