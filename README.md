@@ -105,18 +105,21 @@ ORDER BY total_ignoradas DESC
 [A tabela pode ser vista aqui](https://docs.google.com/spreadsheets/d/1Bqji5RKiQnWcxSsAwfyAFTek9N9hBdT_z99w4Qon8xM/edit#gid=807994399)
 
 
-4. Por fim, investigamos como está o cenário no país: ***Em média, quais estados brasileiros mais vacinam e menos vacinam seus cidadãos para cada doença? Alguma unidade da federação se destaca para o bem ou para o mal?***
+4. Por fim, investigamos como está o cenário atual do país: ***Em média, quais estados brasileiros mais vacinam e menos vacinam seus cidadãos para cada doença? Alguma unidade da federação se destaca para o bem ou para o mal?***
 
-A Bahia apresenta a menor cobertura vacinal do país para poliomielite,  meningococo e tríplice viral d1. O Distrito Federal apresenta a maior cobertura vacinal para tríplice viral d1 e d2, meningococo e a segunda melhor cobertura para poliomielite.
+Em 2021, Santa Catarina apresenta a maior média de doses aplicadas com 89% de cobertura, seguido do Rio Grade do Sul com 87% e Tocantins com 73%. Roraima apresenta a menor média com 13% de cobertura, seguido de Pernambuco com 21% e Mato Grosso com 33%
+
+Destaque negativo para a cobertura da vacina tetra viral, com uma cobertura média de 5% apenas. Ceará, Minas Gerais, Mato Grosso, Paraíba, Pernambuco, Piauí, Rondônia e Sergipe não vacinaram seu público-alvo em 2021 com tetra viral.
+
 
 **Passo a passo:**
 Criamos um banco de dados no SQL e o nomeei como “sist_imunizacao”. Em seguida, importamos o arquivo em CSV para o banco de dados e comecei o processo de execução em SQL. 
 
-SELECT sigla_uf, sum(cobertura_poliomielite), sum(cobertura_meningococo), sum(cobertura_tetravalente), sum(cobertura_tetra_viral), sum(cobertura_triplice_viral_d1), sum(cobertura_triplice_viral_d2)
+SELECT ano, sigla_uf, (cobertura_poliomielite), (cobertura_meningococo), (cobertura_sarampo), (cobertura_tetravalente), (cobertura_tetra_viral), (cobertura_triplice_viral_d1), (cobertura_triplice_viral_d2)
 
 FROM sist_imunizacao
 
-where ano>2011
+WHERE ano=2021
 
 GROUP by sigla_uf
 
