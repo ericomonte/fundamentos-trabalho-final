@@ -43,19 +43,24 @@ Após isso, fizemos as análises dentro do período de anos selecionados (2012 a
 
 Os dados mostram que o último ano que teve essa vacinação foi em 2016, na cidade de Balneário Rincão em Santa Catarina. Lá, 192 doses foram aplicadas, uma cobertura de 95%. Em 2015, apenas duas cidades aparecem com aplicação da vacina: Pescaria Brava (SC) e Mojuí dos Campos (PA).
 O ano mais recente com mais aplicações da dose foi em 2002. A maior aplicação foi em Lagoa Santa (GO) com cobertura de 214%.
+ [A tabela pode ser vista aqui](https://docs.google.com/spreadsheets/d/1iPHrT-psGWY3QvCFPvf59pLs4HfGTwGLRsLyhpv4arI/edit#gid=48535446)
 
 **Vacinação poli**
 
 Os dados mostram que o último ano que teve essa vacinação foi em 2016 e, novamente, na cidade de Balneário Rincão em Santa Catarina. Na época, 167 doses foram aplicadas, uma cobertura de 83%. O ano mais recente com mais aplicações da dose foi em 2002. A maior aplicação foi em Lagoa Santa (GO) com cobertura de 628%.
+[A tabela pode ser vista aqui](https://docs.google.com/spreadsheets/d/1iPHrT-psGWY3QvCFPvf59pLs4HfGTwGLRsLyhpv4arI/edit#gid=1066864454)
 
 **Vacinação sarampo**
 
 Os dados mostram que o último ano que teve vacinação de sarampo foi em 2002. A cidade com maior cobertura foi Palmeira (SC) com 314% de cobertura.
+[A tabela pode ser vista aqui](https://docs.google.com/spreadsheets/d/1iPHrT-psGWY3QvCFPvf59pLs4HfGTwGLRsLyhpv4arI/edit#gid=543481050)
+Observação: parece ter havido um caso de _missing data_, pois foram realizadas campanhas de vacinação de sarampo nos últimos anos.
 
 **Vacinação tríplice viral d1 e d2**
 
 Balneário Rincão aparece novamente como a única cidade de 2016 com vacinação de tríplice viral d1. No ano citado, 61 doses foram aplicadas, uma cobertura de 30%.
 A mesma cidade em 2016 foi a única que aplicou a df: 169 vacinas, uma cobertura de 84%.
+As tabelas podem ser vistas [aqui](https://docs.google.com/spreadsheets/d/1iPHrT-psGWY3QvCFPvf59pLs4HfGTwGLRsLyhpv4arI/edit#gid=853446266) e [aqui](https://docs.google.com/spreadsheets/d/1iPHrT-psGWY3QvCFPvf59pLs4HfGTwGLRsLyhpv4arI/edit#gid=490459698).
 
 **Passo a passo:**
 Importamos também no SQL uma base de dados do IBGE com a população estimada de 2021. Assim trouxemos para a base de vacinação informações importantes como o nome do município, o uf e a população estimada.  Para cada uma das vacinas, fizemos o mesmo esquema abaixo, alterando somente os termos em negrito:
@@ -70,4 +75,4 @@ group by id_municipio
 
 order by **COBERTURA_SARAMPO** DESC
 
-[As tabelas podem ser vistas aqui]().
+
