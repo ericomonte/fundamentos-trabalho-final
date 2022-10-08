@@ -34,21 +34,40 @@ GROUP by ano
 
 ORDER by ano 
 
-Após isso, fizemos as análises dentro do período de anos selecionados (2012 a 2021). [A tabela pode ser vista aqui](https://docs.google.com/spreadsheets/d/1VOvtFY8p7ln40Ax7lEXRW7pQE-I20--fFeGsriiY9HU/edit#gid=1618821006).
+Após isso, fizemos as análises dentro do período de anos selecionados (2012 a 2021). [A tabela pode ser vista aqui](https://docs.google.com/spreadsheets/d/1iPHrT-psGWY3QvCFPvf59pLs4HfGTwGLRsLyhpv4arI/edit#gid=180170413).
 
 
 2. Em seguida perguntamos como isso estava representado territorialmente: ***Qual o ranking dos estados com menor cobertura para as doenças antes erradicadas, como sarampo, pólio, rubéola e difteria?***
 
 **Vacinação dtp**
+
 Os dados mostram que o último ano que teve essa vacinação foi em 2016, na cidade de Balneário Rincão em Santa Catarina. Lá, 192 doses foram aplicadas, uma cobertura de 95%. Em 2015, apenas duas cidades aparecem com aplicação da vacina: Pescaria Brava (SC) e Mojuí dos Campos (PA).
 O ano mais recente com mais aplicações da dose foi em 2002. A maior aplicação foi em Lagoa Santa (GO) com cobertura de 214%.
 
 **Vacinação poli**
+
 Os dados mostram que o último ano que teve essa vacinação foi em 2016 e, novamente, na cidade de Balneário Rincão em Santa Catarina. Na época, 167 doses foram aplicadas, uma cobertura de 83%. O ano mais recente com mais aplicações da dose foi em 2002. A maior aplicação foi em Lagoa Santa (GO) com cobertura de 628%.
 
 **Vacinação sarampo**
+
 Os dados mostram que o último ano que teve vacinação de sarampo foi em 2002. A cidade com maior cobertura foi Palmeira (SC) com 314% de cobertura.
 
 **Vacinação tríplice viral d1 e d2**
+
 Balneário Rincão aparece novamente como a única cidade de 2016 com vacinação de tríplice viral d1. No ano citado, 61 doses foram aplicadas, uma cobertura de 30%.
 A mesma cidade em 2016 foi a única que aplicou a df: 169 vacinas, uma cobertura de 84%.
+
+**Passo a passo:**
+Importamos também no SQL uma base de dados do IBGE com a população estimada de 2021. Assim trouxemos para a base de vacinação informações importantes como o nome do município, o uf e a população estimada.  Para cada uma das vacinas, fizemos o mesmo esquema abaixo, alterando somente os termos em negrito:
+
+select ano, id_municipio, UF, NOMEDOMUNICÍPIO, POPULAÇÃOESTIMADA, **doses_sarampo, cobertura_sarampo**
+
+from vacinacao as v join pop as p
+
+on v.id_municipio = p.field4
+
+group by id_municipio
+
+order by **COBERTURA_SARAMPO** DESC
+
+[As tabelas podem ser vistas aqui](https://docs.google.com/spreadsheets/d/1iPHrT-psGWY3QvCFPvf59pLs4HfGTwGLRsLyhpv4arI/edit#gid=180170413).
