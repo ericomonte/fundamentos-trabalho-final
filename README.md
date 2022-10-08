@@ -101,3 +101,14 @@ ON CódigoMunicípioCompleto = id_municipio
 GROUP BY cidade
 
 ORDER BY total_ignoradas DESC
+
+[A tabela pode ser vista aqui](https://docs.google.com/spreadsheets/d/1Bqji5RKiQnWcxSsAwfyAFTek9N9hBdT_z99w4Qon8xM/edit#gid=807994399)
+
+
+4. POr fim, investigamos como está o cenário no país: ***Em média, quais estados brasileiros mais vacinam e menos vacinam seus cidadãos para cada doença? Alguma unidade da federação se destaca para o bem ou para o mal?***
+
+Decidimos fazer um recorte temporal mais curto para investigar a quantidade de doses aplicadas por estado pré e pós pandemia. Entre 2012 e 2019, o número de doses aplicadas por estado, em média, subiu 108%. Embora, em oito estados o número de doses tenha caído.
+
+Entre 2019 (último ano pré-pandemia) e 2021, o número de doses aplicadas por estado, em média, caiu 28%. Todos os estados apresentaram queda. Destaque para o Amapá, onde a redução foi de 40%. O Espírito Santo apresentou a menor redução: 18%.
+
+
