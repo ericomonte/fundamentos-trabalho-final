@@ -70,4 +70,4 @@ group by id_municipio
 
 order by **COBERTURA_SARAMPO** DESC
 
-[As tabelas podem ser vistas aqui](https://docs.google.com/spreadsheets/d/1iPHrT-psGWY3QvCFPvf59pLs4HfGTwGLRsLyhpv4arI/edit#gid=180170413).
+[As tabelas podem ser vistas aqui]().
