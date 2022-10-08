@@ -112,3 +112,11 @@ Decidimos fazer um recorte temporal mais curto para investigar a quantidade de d
 Entre 2019 (último ano pré-pandemia) e 2021, o número de doses aplicadas por estado, em média, caiu 28%. Todos os estados apresentaram queda. Destaque para o Amapá, onde a redução foi de 40%. O Espírito Santo apresentou a menor redução: 18%.
 
 
+## Para onde esses insights poderiam nos levar
+
+As vacinas são responsáveis pela eliminação de diversas doenças no país, como rubéola, sarampo e poliomielite. No entanto, nos últimos anos, com o surgimento de movimentos antivacinas e o desconhecimento da população sobre os efeitos dessas enfermidades são alguns dos possíveis motivos para que as crianças desta década estejam cada vez mais desprotegidas. O reflexo disso pode ser observado com a baixa cobertura vacinal registrada. Campanhas são prorrogadas em todo o país e, mesmo assim, os índices mínimos para proteção da população não são atingidos.
+
+De acordo com dados do Sistema de Imunização do Ministério da Saúde, de 2012 a 2021, todas as vacinas utilizadas para prevenir poliomielite, meningite e sarampo (tríplice viral, tetra viral ou tetravalente, sarampo, poliomielite e meningococo) apresentaram redução na cobertura. Esse cenário se agravou pós-pandemia. Um aprofundamento nessa análise pode ser realizado cruzando com o aumento de registros recentes de casos dessas doenças por região.
+
+Esse caso se agrava ao descobrirmos que há um “apagão” no registro de doses aplicadas. 44% das prefeituras brasileiras não registram ao menos metade das vacinas que aplicam em suas populações. Por que isso acontece? E quais os impactos nas políticas públicas de imunização?
+
